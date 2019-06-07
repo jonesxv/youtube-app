@@ -1,17 +1,42 @@
 body {
-    /* background-color: rgb(182, 50, 50); */
     padding: 0;
     margin: 0;
 }
 
-.navigation {
-    background: red;
+.search_wrapper {
+    padding: 1em;
+    /* display: flex; */
+    width: 100%;
+    height: 4em;
 }
 
-.main_container {
-    border: .5px solid #999;
+.search_input {
+    padding: 1em;
+}
+
+.brand {
+    width: 15em;
+}
+
+.main_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+
+.plyandsec {
+    display: flex;
+}
+
+.nav_container {
+    background: #f5f5f5;
+    height: 100vh;
+    flex: .5;
+}
+
+.sections_wrapper {
+    flex: 2;
     padding: 4em;
-    width: 70vw;
 }
 
 .section_container {
