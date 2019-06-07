@@ -1,17 +1,18 @@
 {
-  "name": "youtube-app",
-  "version": "1.0.0",
-  "description": "YouTube API application",
-  "main": "app.js",
-  "dependencies": {
-    "express-handlebars": "^3.1.0",
-    "express": "^4.17.1"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "youtube-app",
+    "version": "1.0.0",
+    "description": "YouTube API application",
+    "main": "app.js",
+    "dependencies": {
+        "express-handlebars": "^3.1.0",
+        "express": "^4.17.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

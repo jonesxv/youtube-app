@@ -1,3 +1,20 @@
 body {
-  background-color: white;
+    /* background-color: rgb(182, 50, 50); */
+    padding: 0;
+    margin: 0;
+}
+
+.navigation {
+    background: red;
+}
+
+.main_container {
+    border: .5px solid #999;
+    padding: 4em;
+    width: 70vw;
+}
+
+.section_container {
+    border-bottom: .5px solid #ccc;
+    width: 100%;
 }
