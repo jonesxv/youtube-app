@@ -4,10 +4,12 @@
             <h1>{{this.title}}</h1>
             {{log this.title}}
             {{#each this.items}}
-                <h3>{{this.snippet.title}}</h3>
-                <img src="{{this.snippet.thumbnails.medium.url}}"/>
-                <button class="addToPlaylist" type="button" name="addToPlaylist">Add +</button>
-            {{/each}}
+                <div class="section_item">
+                    <h3>{{this.snippet.title}}</h3>
+                    <img src="{{this.snippet.thumbnails.medium.url}}"/>
+                    <button class="addToPlaylist" type="button" name="addToPlaylist">Add +</button>
+                </div>
+            {{/each}}    
         </section>
     {{/each}}
 </div>
