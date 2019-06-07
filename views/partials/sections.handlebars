@@ -4,9 +4,13 @@
             <h1>{{this.title}}</h1>
             {{log this.title}}
             {{#each this.items}}
-                <h3>{{this.snippet.title}}</h3>
-                <img src="{{this.snippet.thumbnails.medium.url}}"/>
-                <button class="addToPlaylist" type="button" name="addToPlaylist">Add +</button>
+                <div class="section_item"></div>
+                    <h3>{{this.snippet.title}}</h3>
+                    <img src="{{this.snippet.thumbnails.medium.url}}"/>
+                    <form action="/playlist/{{this.id.videoId}}" method="POST">
+                    <input key="{{this.id.videoId}}" class="btn addToPlaylist" type="submit" value="Add">
+                    </form>
+                </div>
             {{/each}}
         </section>
     {{/each}}
