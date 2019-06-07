@@ -10,7 +10,7 @@ async function youtubeAPI(query, num='5') {
     let res = await response.json()
     vidArr.push(res)
   }
-  console.log(vidArr)
+  return vidArr;
   
   
 }

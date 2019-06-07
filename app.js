@@ -45,8 +45,14 @@ app.set('view engine', 'handlebars');
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-  authAPI.youtubeAPI();
-    res.render('home');
+  // authAPI.youtubeAPI().then(sections => {
+  //   console.log(sections)
+
+  
+    
+  // });
+  res.render('home',{sections: [1,2,3,4]});
+  
 });
 
 addVideo();
