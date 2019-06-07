@@ -6,13 +6,8 @@ const test = require('./public/js/test')
 const keys = require('./config');
 const authAPI = require('./public/js/auth')
 const sections = require('./public/data/sampleSections')
-var jsdom = require('jsdom');
-const { JSDOM } = jsdom;
+var bodyParser = require('body-parser')
 
-const { window } = new JSDOM;
-const { document } = (new JSDOM('')).window;
-global.document = document;
-var $ = jQuery = require('jquery')(window);
 // Database configuration
 let currentUser = '';
 
@@ -39,6 +34,19 @@ function addVideo() {
         });
 }
 
+function addToPlaylist(id) {
+    return db.collection('playlist')
+        .doc('videos')
+        .update({
+            videos: firebase.firestore.FieldValue.arrayUnion(id),
+        });
+}
+
+function getPlaylist() {
+    console.log(db.collection('playlist')
+        .doc('videos'))
+}
+
 var app = express();
 
 app.engine('handlebars', exphbs({
@@ -50,25 +58,32 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 app.use(express.static(__dirname + '/public'));
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
 
 app.get('/', function(req, res) {
     // authAPI.youtubeAPI().then(sections => {
-    //   console.log(sections)
-
-
-
 
     // });
+    // getPlaylist().then((arr) => {
+    //     console.log(arr)
+    // })
     res.render('home', { sections: sections });
-    console.log('add listener')
 
 });
 
-
-
-let buttons = document.getElementsByClassName('addToPlaylist');
-$('.sections-wrapper').on('click', function() {
-    console.log('clicked')
+app.post('/playlist/:id', function(req, res) {
+    console.log(req.params.id)
+    addToPlaylist(req.params.id).then(() => {
+        res.redirect('/')
+    })
+    
 })
+
+
+
+
 
 app.listen(3000);
