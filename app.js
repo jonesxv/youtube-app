@@ -5,7 +5,14 @@ var path = require('path');
 const test = require('./public/js/test')
 const keys = require('./config');
 const authAPI = require('./public/js/auth')
+const sections = require('./public/data/sampleSections')
+var jsdom = require('jsdom');
+const { JSDOM } = jsdom;
 
+const { window } = new JSDOM;
+const { document } = (new JSDOM('')).window;
+global.document = document;
+var $ = jQuery = require('jquery')(window);
 // Database configuration
 let currentUser = '';
 
@@ -50,9 +57,18 @@ app.get('/', function(req, res) {
 
 
 
+
     // });
-    res.render('home', { sections: [1, 2, 3, 4] });
+    res.render('home', { sections: sections });
+    console.log('add listener')
 
 });
+
+
+
+let buttons = document.getElementsByClassName('addToPlaylist');
+$('.sections-wrapper').on('click', function() {
+    console.log('clicked')
+})
 
 app.listen(3000);

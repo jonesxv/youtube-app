@@ -1,15 +1,13 @@
 <div class="sections_wrapper">
-    <section class="section_container">
-        <h1>section one</h1>
-    </section>
-    <section class="section_container">
-        <h1> section two</h1>
-    </section>
-    <section class="section_container">
-        <h1>section three</h1>
-    </section>
-    <section class="section_container">
-        <h1>section four</h1>
-    </section>  
-        
+    {{#each sections}}
+        <section class="section_container">
+            <h1>{{this.title}}</h1>
+            {{log this.title}}
+            {{#each this.items}}
+                <h3>{{this.snippet.title}}</h3>
+                <img src="{{this.snippet.thumbnails.medium.url}}"/>
+                <button class="addToPlaylist" type="button" name="addToPlaylist">Add +</button>
+            {{/each}}
+        </section>
+    {{/each}}
 </div>
