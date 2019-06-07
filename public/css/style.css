@@ -4,22 +4,33 @@
     flex-direction: column;
 }
 
-.search_wrapper {
-    justify-content: space-between;
-    box-shadow: 0px -4px 8px #ccc;
-    align-items: center;
-    padding: 0 2em;
+.header {
+    padding: 1em;
     display: flex;
-    height: 56px;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.search_input {
-    border: .5px solid #ccc;
-    padding: .4em .8em;
-    border-radius: .2em;
-    font-size: 1em;
-    width: 50em;
+.search_wrapper {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    width: 600px;
     margin: auto;
+}
+
+.search {
+    padding: 0.2em 0.4em;
+    width: 100%;
+    border-radius: .1em;
+    border: .5px solid #ccc;
+    font-size: 1em;
+}
+
+.search_btn {
+    position: absolute;
+    border: none;
+    right: 10;
 }
 
 .brand {
