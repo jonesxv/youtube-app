@@ -45,8 +45,10 @@ function addToPlaylist(id) {
 function getPlaylist() {
     return db.collection('playlist')
         .doc('videos')
-        .collection('videos')
-    
+        .get()
+        .then(snapshot => {
+            snapshot.data().videos
+        })
 }
 
 var app = express();
@@ -69,9 +71,12 @@ app.get('/', function(req, res) {
     // authAPI.youtubeAPI().then(sections => {
 
     // });
-    console.log(getPlaylist())
-    res.render('home', { sections: sections });
-
+    db.collection('playlist')
+        .doc('videos')
+        .get()
+        .then(snapshot => {
+            res.render('home', { sections: sections, videos: snapshot.data().videos});
+        })
 });
 
 app.post('/playlist/:id', function(req, res) {
