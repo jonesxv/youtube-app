@@ -1,16 +1,18 @@
 <div class="sections_wrapper">
     {{#each sections}}
         <section class="section_container">
-            <h1>{{this.title}}</h1>
+            <h1 class="section_title">{{this.title}}</h1>
+            <div class="items_wrapper">
             {{#each this.items}}
                 <div class="section_item">
-                    <h3>{{this.snippet.title}}</h3>
                     <img src="{{this.snippet.thumbnails.medium.url}}"/>
+                    <h3>{{this.snippet.title}}</h3>
                     <form action="/playlist/{{this.id.videoId}}" method="POST">
                     <input key="{{this.id.videoId}}" class="btn addToPlaylist" type="submit" value="Add">
                     </form>
                 </div>
             {{/each}}
+            </div>
         </section>
     {{/each}}
 </div>

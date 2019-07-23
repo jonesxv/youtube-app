@@ -80,7 +80,6 @@ app.get('/', function(req, res) {
 });
 
 app.post('/playlist/:id', function(req, res) {
-    console.log(req.params.id)
     addToPlaylist(req.params.id).then(() => {
         res.redirect('/')
     })

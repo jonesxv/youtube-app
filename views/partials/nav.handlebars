@@ -1,8 +1,8 @@
 <nav class="play_list">
   <ul>
-    <li>Play list</li>
+    <h3 class="playlist_title">Play list</h3>
     {{#each videos}}
-      <li><a href="https://www.youtube.com/watch?v={{this}}"><img src="https://i.ytimg.com/vi/{{this}}/default.jpg"/></a></li>
+      <li class="playlist_item"><a href="https://www.youtube.com/watch?v={{this}}"><img class="playlist_img" src="https://i.ytimg.com/vi/{{this}}/mqdefault.jpg"/></a></li>
     {{/each}}
   </ul>
 </nav>
