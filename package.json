@@ -11,7 +11,7 @@
         "jquery": "^3.4.1",
         "jsdom": "^15.1.1",
         "lodash": "^4.17.15",
-        "node-fetch": "^2.6.0"
+        "node-fetch": "^2.6.1"
     },
     "devDependencies": {},
     "scripts": {
